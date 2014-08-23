@@ -9,10 +9,10 @@ module.exports = function (grunt)
             options: {
                 
             },
-            src: []
+            src: ['app/controllers/*.php', 'app/libraries/*.php', 'app/models/*.php']
         },
         jshint: {
-            all: ['Gruntfile.js']
+            all: ['Gruntfile.js', 'public/js/*.js', 'app/controllers/*.js']
         },
         // CSS/LESS lint
         recess: {
