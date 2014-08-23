@@ -27,11 +27,11 @@ module.exports = function (grunt)
          */
         bump: {
             options: {
-                files: ['package.json'],
+                files: ['composer.json'],
                 updateConfigs: [],
                 commit: true,
                 commitMessage: "Release v%VERSION%",
-                commitFiles: ['package.json', 'composer.json'],
+                commitFiles: ['-a'],
                 createTag: true,
                 tagName: 'v%VERSION%',
                 tagMessage: 'Version %VERSION%',
