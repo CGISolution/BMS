@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-
+        "components/angular.js": "1.2.19",
+        "twbs/bootstrap": "3.2"
     }
 }
