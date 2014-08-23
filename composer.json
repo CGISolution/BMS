@@ -1,0 +1,14 @@
+{
+    "name": "cgisolution/bms",
+    "description": "Business Management System",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "William Gallios",
+            "email": "williamgallios@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}
