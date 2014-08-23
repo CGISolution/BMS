@@ -1,6 +1,10 @@
 module.exports = function (grunt)
 {
     grunt.initConfig({
+        clean: {
+            js: [],
+            css: ['public/css/main.css', 'public/css/*.min.css']
+        },
         phplint: {
             options: {
                 
@@ -13,7 +17,7 @@ module.exports = function (grunt)
         // CSS/LESS lint
         recess: {
             dist: {
-                src: ['public/less/main.less', 'public/css/*.css']
+                src: ['public/less/site.less', 'public/css/*.css']
             }
         },
         /**
@@ -39,14 +43,35 @@ module.exports = function (grunt)
                 pushTo: 'origin',
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
             }
+        },
+        less: {
+            dev: {
+                options: {
+                    paths: ['public/less', 'vendor/twbs/bootstrap/less'],
+                    compress: false
+                },
+                files: {
+                    'public/css/main.css': 'public/less/main.less',
+                }
+            },
+            min: {
+                options: {
+                    paths: ['public/less', 'vendor/twbs/bootstrap/less'],
+                    compress: true
+                },
+                files: {
+                    'public/css/main.min.css': 'public/less/main.less',
+                }
+            }
         }
-        
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-recess');
     grunt.loadNpmTasks('grunt-phplint');
 
-    grunt.registerTask('default', ['phplint:src', 'jshint', 'recess:dist']);
+    grunt.registerTask('default', ['clean:js', 'clean:css', 'phplint:src', 'jshint', 'recess:dist', 'less:dev', 'less:min']);
 };
