@@ -52,7 +52,7 @@ $autoload['packages'] = array(APPPATH . 'third_party' . DS . 'phpfunctions');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('session', 'javascript');
+$autoload['libraries'] = array('session', 'PHPFunctions');
 
 
 /*
