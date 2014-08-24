@@ -1,0 +1,29 @@
+
+form(name='login', ng-submit='submitLogin(login.$valid)', novalidate='novalidate')
+
+    div.col-sm-6.col-sm-offset-3
+
+        alert(ng-show="(login.email.$dirty && login.email.$invalid) || (login.passwd.$dirty && login.passwd.$invalid)", type="warning")
+            span(ng-show='login.email.$error.required') Please enter your email
+            span(ng-show='login.email.$error.email') Please enter a valid email
+            span(ng-show='login.passwd.$error.required') Please enter your password
+
+
+        div.panel.panel-default
+            div.panel-heading
+                h3.panel-title Login
+
+            div.panel-body
+                div.form-group
+                    input.form-control(type='email', name='email', placeholder='E-mail', ng-change='checkLoginForm()', ng-keydown='checkLoginForm()', ng-model='email', required='required')
+
+                div.form-group
+                    input.form-control(type='password', name='passwd', ng-change='checkLoginForm()', ng-keydown='checkLoginForm()', ng-model='user.passwd', required='required')
+
+
+            div.panel-footer
+                button.btn.btn-primary(type='submit', ng-disabled='login.$invalid')
+                    i.fa.fa-sign-in
+                    |  Login
+
+

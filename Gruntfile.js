@@ -2,8 +2,23 @@ module.exports = function (grunt)
 {
     grunt.initConfig({
         clean: {
+            phtml: [
+                'app/views/**/*.phtml'
+            ],
             js: [],
-            css: ['public/css/main.css', 'public/css/main.min.css']
+            css: [
+                'public/css/main.css',
+                'public/css/main.min.css'
+            ]
+        },
+        jadephp: {
+            compile: {
+                expand: true,
+                cwd: 'app/jade/',
+                src: ['**/*.jade'],
+                dest: 'app/views/',
+                ext: '.phtml'
+            }
         },
         phplint: {
             options: {
@@ -69,9 +84,10 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-jade-php');
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-recess');
     grunt.loadNpmTasks('grunt-phplint');
 
-    grunt.registerTask('default', ['clean:js', 'clean:css', 'phplint:src', 'jshint', 'recess:dist', 'less:dev', 'less:min']);
+    grunt.registerTask('default', ['clean:js', 'clean:css', 'phplint:src', 'jshint', 'recess:dist', 'less:dev', 'less:min', 'jadephp']);
 };

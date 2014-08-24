@@ -1,3 +1,6 @@
 [submodule "app/third_party/phpfunctions"]
 	path = app/third_party/phpfunctions
 	url = git@github.com:CGISolution/phpfunctions.git
+[submodule "app/third_party/jade"]
+	path = app/third_party/jade
+	url = git@github.com:CGISolution/jade.php.git

@@ -14,7 +14,7 @@ app.config(['$routeProvider', '$locationProvider', '$provide', '$logProvider', f
 
 
     $routeProvider.when('/', {
-        templateUrl: '/app/views/login/_layout.html',
+        templateUrl: '/app/views/login/_layout.phtml',
         controller:'login'
     }).when('/setup', {
         templateUrl: '/app/views/setup/_layout.html',
