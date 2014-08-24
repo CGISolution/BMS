@@ -1,0 +1,4 @@
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|public|app|bower_components|vendor|components|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]

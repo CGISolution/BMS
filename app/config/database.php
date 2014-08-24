@@ -1,4 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . 'application' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'database.local.php'))
+{
+    include_once 'database.local.php';
+}
+
 /*
 | -------------------------------------------------------------------
 | DATABASE CONNECTIVITY SETTINGS
@@ -48,11 +54,14 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
-$db['default']['dbdriver'] = 'mysql';
+if (!isset($db['default']['hostname'])) $db['default']['hostname'] = '127.0.0.1';
+if (!isset($db['default']['username'])) $db['default']['username'] = '';
+if (!isset($db['default']['password'])) $db['default']['password'] = '';
+if (!isset($db['default']['database'])) $db['default']['database'] = '';
+
+if (!isset($db['default']['port'])) $db['default']['port'] = 27017;
+
+$db['default']['dbdriver'] = 'mongo';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

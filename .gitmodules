@@ -4,3 +4,9 @@
 [submodule "app/third_party/jade"]
 	path = app/third_party/jade
 	url = git@github.com:CGISolution/jade.php.git
+[submodule "app/third_party/ci-mongo-base-model"]
+	path = app/third_party/ci-mongo-base-model
+	url = git@github.com:wgallios/ci-mongodb-base-model.git
+[submodule "app/third_party/cimongo"]
+	path = app/third_party/cimongo
+	url = git@github.com:CGISolution/cimongo-codeigniter-mongodb-library.git

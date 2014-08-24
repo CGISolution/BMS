@@ -60,6 +60,7 @@ if (defined('ENVIRONMENT'))
 		case 'development':
             error_reporting(E_ERROR | E_PARSE | E_STRICT);
 			//error_reporting(E_ALL);
+            if (isset($_GET['E_ALL'])) error_reporting(E_ALL);
 		break;
 	
 		case 'testing':
