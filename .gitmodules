@@ -1,0 +1,3 @@
+[submodule "app/third_party/phpfunctions"]
+	path = app/third_party/phpfunctions
+	url = git@github.com:wgallios/phpfunctions.git

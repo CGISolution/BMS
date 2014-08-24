@@ -1,5 +1,30 @@
 <?php
 
+date_default_timezone_set('UTC');
+
+DEFINE('DATESTAMP', date('Y-m-d G:i:s'));
+DEFINE('DS', DIRECTORY_SEPARATOR);
+DEFINE('EOL', PHP_EOL);
+DEFINE('TAB', "\t");
+
+
+/*
+ * sets proper document root to ensure it ends in a direcotry separator
+ */
+
+if (php_sapi_name() == 'cli') $_SERVER['DOCUMENT_ROOT'] = dirname(__file__);
+ 
+$_SERVER['DOCUMENT_ROOT'] = rtrim($_SERVER['DOCUMENT_ROOT'], '/') . DIRECTORY_SEPARATOR;
+
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
+
+/*
+| error logging settings
+*/
+ini_set('log_errors', true);
+ini_set('html_errors', false);
+ini_set('error_log', '/var/log/bms/bms.log');
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

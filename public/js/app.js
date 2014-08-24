@@ -1,4 +1,4 @@
-var app = angular.module('bms', ['ngRoute', 'bmsController']);
+var app = angular.module('bms', ['ngRoute', 'ui.bootstrap', 'bmsController']);
 
 app.config(['$routeProvider', '$locationProvider', '$provide', '$logProvider', function ($routeProvider, $locationProvider, $provide, $logProvider){
     $logProvider.debugEnabled(true);
@@ -14,8 +14,8 @@ app.config(['$routeProvider', '$locationProvider', '$provide', '$logProvider', f
 
 
     $routeProvider.when('/', {
-        templateUrl: '/app/views/login.html',
-        controller:'index'
+        templateUrl: '/app/views/login/_layout.html',
+        controller:'login'
     }).when('/setup', {
         //templateUrl: 'views/setup.html',
         //controller:'setup'
