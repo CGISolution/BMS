@@ -4,15 +4,17 @@ div.container
 
     p.lead Follow the instructions below to complete the setup process
 
-    div.row
-        div.col-sm-6
-            div(ng-include="'/app/views/setup/database.phtml'")
+    form(name='setup' novalidate='novalidate')
 
-        div.col-sm-6
-            div(ng-include="'/app/views/setup/admin.phtml'")
+        div.row
+            div.col-sm-6
+                div(ng-include="'/app/views/setup/database.phtml'")
 
-    div.form-group
-        div.col-xs-12
-            button.btn.btn-primary(type='submit')
-                i.fa.fa-cog
-                | Run Setup
+            div.col-sm-6
+                div(ng-include="'/app/views/setup/admin.phtml'")
+
+        div.form-group
+            div.col-xs-12
+                button.btn.btn-primary(type='submit', ng-disabled='setup.$invalid')
+                    i.fa.fa-cog
+                    |  Run Setup
