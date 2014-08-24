@@ -3,12 +3,12 @@
 class Welcome extends CI_Controller
 {
 
-	public function index()
+    public function index()
     {
         $data['body'] = $this->load->view('app', null, true);
 
         $this->load->view('_layout', $data);
-	}
+    }
 }
 
 /* End of file welcome.php */

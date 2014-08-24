@@ -1,20 +1,23 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class CI_Mongo extends Mongo
 {
 
-    var $db;
+    protected $ci;
+    public $db;
 
     function CI_Mongo()
     {
-        //Fetch CodeIgniter instance
-        $ci = get_instance();
+        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . 'app/config/mongo.php')) throw new Exception("Mongodb config file does not exist!");
+
+        $this->ci =& get_instance();
+
         // Load Mongo configuration file
-        $ci->load->config('mongo');
+        $this->ci->load->config('mongo');
 
         // Fetch Mongo server and database configuration
-        $server = $ci->config->item('mongo_server');
-        $dbname = $ci->config->item('mongo_dbname');
+        $server = '';
+        $dbname = '';
 
         // Initialise Mongo
         if ($server)
@@ -25,7 +28,7 @@ class CI_Mongo extends Mongo
         {
             parent::__construct();
         }
-            
+
         $this->db = $this->$dbname;
     }
 }
