@@ -23,3 +23,9 @@ bmsController.controller('login', ['$scope', '$log', function($scope, $log){
         }
     };
 }]);
+
+bmsController.controller('setup', ['$scope', '$log', function($scope, $log){
+
+}]);
+
+

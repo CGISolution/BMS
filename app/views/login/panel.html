@@ -5,7 +5,7 @@
 
   <div class='col-sm-6 col-sm-offset-3'>
 
-    <alert ng-show="login.email.$dirty && login.email.$invalid || login.passwd.$dirty && login.passwd.$invalid" type="warning">
+    <alert ng-show="(login.email.$dirty && login.email.$invalid) || (login.passwd.$dirty && login.passwd.$invalid)" type="warning">
       <span ng-show='login.email.$error.required'>Please enter your email</span>
       <span ng-show='login.email.$error.email'>Please enter a valid email</span>
       <span ng-show='login.passwd.$error.required'>Please enter your password</span>
