@@ -10,6 +10,7 @@
     ],
     "require": {
         "components/angular.js": "1.2.19",
-        "twbs/bootstrap": "3.2"
+        "twbs/bootstrap": "3.2",
+        "components/font-awesome": "4.1"
     }
 }

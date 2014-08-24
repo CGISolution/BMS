@@ -3,7 +3,7 @@ module.exports = function (grunt)
     grunt.initConfig({
         clean: {
             js: [],
-            css: ['public/css/main.css', 'public/css/*.min.css']
+            css: ['public/css/main.css', 'public/css/main.min.css']
         },
         phplint: {
             options: {
@@ -47,7 +47,7 @@ module.exports = function (grunt)
         less: {
             dev: {
                 options: {
-                    paths: ['public/less', 'vendor/twbs/bootstrap/less'],
+                    paths: ['public/less', 'vendor/twbs/bootstrap/less', 'vendor/components/font-awesome/less'],
                     compress: false
                 },
                 files: {
@@ -56,7 +56,7 @@ module.exports = function (grunt)
             },
             min: {
                 options: {
-                    paths: ['public/less', 'vendor/twbs/bootstrap/less'],
+                    paths: ['public/less', 'vendor/twbs/bootstrap/less', 'vendor/components/font-awesome/less'],
                     compress: true
                 },
                 files: {
