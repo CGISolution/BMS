@@ -6571,3 +6571,8 @@ button.close {
 body {
   color: #777777;
 }
+.alert span {
+  display: block;
+  float: none;
+  width: 100%;
+}

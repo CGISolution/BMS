@@ -6,5 +6,20 @@ bmsController.controller('index', ['$scope', '$log', function($scope, $log){
 
 
 bmsController.controller('login', ['$scope', '$log', function($scope, $log){
-    $log.warn("login");
+
+    $scope.checkLoginForm = function ()
+    {
+        if (this.login.email.$dirty)
+        {
+           // $log.warn($scope.email);
+        }
+    };
+
+    $scope.submitLogin = function (loginValid)
+    {
+        if (loginValid)
+        {
+
+        }
+    };
 }]);
