@@ -17,7 +17,7 @@ app.config(['$routeProvider', '$locationProvider', '$provide', '$logProvider', f
         templateUrl: '/app/views/login/_layout.phtml',
         controller:'login'
     }).when('/setup', {
-        templateUrl: '/app/views/setup/_layout.html',
+        templateUrl: '/app/views/setup/_layout.phtml',
         controller:'setup'
     }).otherwise({ redirectTo: '/' });
 

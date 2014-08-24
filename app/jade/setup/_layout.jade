@@ -1,0 +1,18 @@
+
+div.container
+    h1 Setup
+
+    p.lead Follow the instructions below to complete the setup process
+
+    div.row
+        div.col-sm-6
+            div(ng-include="'/app/views/setup/database.phtml'")
+
+        div.col-sm-6
+            div(ng-include="'/app/views/setup/admin.phtml'")
+
+    div.form-group
+        div.col-xs-12
+            button.btn.btn-primary(type='submit')
+                i.fa.fa-cog
+                | Run Setup

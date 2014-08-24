@@ -1,0 +1,21 @@
+
+div.panel.panel-default
+    div.panel-heading
+        h3.panel-title Database
+        
+    div.panel-body
+        div.form-group
+            label.control-label Database Name
+            input.form-control(type='text', placeholder='database', required='required')
+
+        div.form-group
+            label.control-label Host[:port]
+            input.form-control(type='text', placeholder='127.0.0.1', required='required')
+
+        div.form-group
+            label.control-label Username
+            input.form-control(type='text', name='dbUser', placeholder='root', required='required')
+
+        div.form-group
+            label.control-label Password
+            input.form-control(type='password', required='required')

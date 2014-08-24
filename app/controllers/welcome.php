@@ -5,9 +5,9 @@ class Welcome extends CI_Controller
 
     public function index()
     {
-        $data['body'] = $this->load->view('app', null, true);
+        $data['body'] = $this->load->view('app.phtml', null, true);
 
-        $this->load->view('_layout', $data);
+        $this->load->view('_layout.phtml', $data);
     }
 }
 

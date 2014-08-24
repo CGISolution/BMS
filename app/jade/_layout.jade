@@ -1,0 +1,16 @@
+!!! 5
+html(ng-app='bms')
+    head
+        link(type='text/css', rel='stylesheet', href='/public/css/main.css')
+
+        script(type='text/javascript', src='/vendor/components/angular.js/angular.min.js')
+        script(type='text/javascript', src='/vendor/components/angular.js/angular-route.min.js')
+
+        script(type='text/javascript', src='/bower_components/angular-bootstrap/ui-bootstrap.min.js')
+        script(type='text/javascript', src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
+
+        script(type='text/javascript', src='/public/js/app.js')
+        script(type='text/javascript', src='/app/controllers/bms.js')
+
+    body
+        - echo $body

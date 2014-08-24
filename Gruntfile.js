@@ -89,5 +89,5 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-recess');
     grunt.loadNpmTasks('grunt-phplint');
 
-    grunt.registerTask('default', ['clean:js', 'clean:css', 'phplint:src', 'jshint', 'recess:dist', 'less:dev', 'less:min', 'jadephp']);
+    grunt.registerTask('default', ['clean:phtml', 'clean:js', 'clean:css', 'phplint:src', 'jshint', 'recess:dist', 'less:dev', 'less:min', 'jadephp']);
 };
