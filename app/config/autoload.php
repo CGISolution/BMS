@@ -37,7 +37,10 @@
 |
 */
 
-$autoload['packages'] = array(APPPATH . 'third_party' . DS . 'phpfunctions');
+$autoload['packages'] = array(
+        APPPATH . 'third_party' . DS . 'phpfunctions',
+        APPPATH . 'third_party' . DS . 'cimongo'
+    );
 
 
 /*
@@ -52,7 +55,7 @@ $autoload['packages'] = array(APPPATH . 'third_party' . DS . 'phpfunctions');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('session', 'PHPFunctions');
+$autoload['libraries'] = array('PHPFunctions', 'Cimongo');
 
 
 /*
@@ -82,7 +85,8 @@ $autoload['helper'] = array();
 
 $autoload['config'] = array();
 
-
+// autoloads mongo config if present
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . 'app/config/mongodb.php')) $autoload['config'][] = 'mongodb';
 /*
 | -------------------------------------------------------------------
 |  Auto-load Language files

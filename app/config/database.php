@@ -61,7 +61,7 @@ if (!isset($db['default']['database'])) $db['default']['database'] = '';
 
 if (!isset($db['default']['port'])) $db['default']['port'] = 27017;
 
-$db['default']['dbdriver'] = 'mongo';
+$db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

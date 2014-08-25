@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+require_once 'app/models/user.php';
+
 class Setup extends CI_Controller
 {
 
@@ -18,17 +20,20 @@ class Setup extends CI_Controller
      */
     public function run ()
     {
-        $this->load->model('user_model', 'user');
+        //$this->load->model('user_model', 'user');
 
-        //$post = $this->input->post();
+        $post = $this->input->post();
 
         try
         {
-            $this->create_admin_user();
+            $this->create_admin_user($post);
+
+            PHPFunctions::jsonReturn("SUCCESS", 'test');
         }
         catch(Exception $e)
         {
             PHPFunctions::sendStackTrace($e);
+            PHPFunctions::jsonReturn("ERROR", $e->getMessage());
         }
     }
 
@@ -41,13 +46,8 @@ class Setup extends CI_Controller
      *
      * @return TODO
      */
-    protected function create_admin_user ()
+    protected function create_admin_user ($post)
     {
-        $users = $this->user->get_all();
-        
-        print_($users);
-        elog('test');
-
-        PHPFunctions::jsonReturn("Success", 'test');
+        $user = new User($post);
     }
 }
